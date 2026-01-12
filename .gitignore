@@ -1,0 +1,8 @@
+.DS_Store
+.vscode
+
+*.a
+*.o
+.exec00
+.exec01
+.exec02

@@ -3,6 +3,7 @@
 #define SCALARCONVERTER_HPP
 
 #include <string>
+#include <iostream>
 
 class ScalarConverter
 {
@@ -13,7 +14,7 @@ class ScalarConverter
 	~ScalarConverter(); // a voir si warning ou non
 	
 	public:
-	static void convert(std::string& str);
+	static void convert(const std::string& str);
 };
 
 #endif

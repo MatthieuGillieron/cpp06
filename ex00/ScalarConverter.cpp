@@ -31,7 +31,7 @@ ScalarConverter::~ScalarConverter()
 
 // === UTILS === 
 
-bool isSpecial(const std::string& str)
+static bool isSpecial(const std::string& str)
 {
 
 	if (str == "nan" || str == "nanf")
@@ -48,7 +48,7 @@ bool isSpecial(const std::string& str)
 }
 
 
-bool isValidInt(const std::string& str)
+static bool isValidInt(const std::string& str)
 {
 	if (str.empty())
 		return false;
@@ -72,7 +72,7 @@ bool isValidInt(const std::string& str)
 }
 
 
-bool isValidDouble(const std::string& str)
+static bool isValidDouble(const std::string& str)
 {
 
 	if (str.empty())
@@ -106,7 +106,7 @@ bool isValidDouble(const std::string& str)
 
 
 
-bool isValidFloat(const std::string& str)
+static bool isValidFloat(const std::string& str)
 {
 
 

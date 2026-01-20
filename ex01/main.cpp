@@ -6,7 +6,6 @@ int main()
 	Data client;
 	client.id = 12;
 
-	
 	std::cout << " === CLASSIC OBJET ==="<< std::endl;
 	std::cout << "Adress: " << &client << std::endl;
 	std::cout << "id: " << client.id << std::endl;
@@ -32,11 +31,15 @@ int main()
 
 	std::cout << " === VERIFICATION ==="<< std::endl;
 	if (&client == ptr)
-		std::cout << "It's work !";
+	{
+		
+		
+		std::cout << "Before: " << &client << "   after: " << ptr << std::endl;
+		std::cout << "Correct!" << std::endl;
+	}	
 	else
-		std::cout << "[ X ] Dosen't work ..";
+		std::cout << "[ X ] Dosen't work .." << std::endl;
 	
-	std::cout << std::endl;
 
 	return 0;
 }

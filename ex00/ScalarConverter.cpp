@@ -10,13 +10,13 @@
 ScalarConverter::ScalarConverter()
 {
 	// non-instaciable class
-};
+}
 
 ScalarConverter::ScalarConverter(const ScalarConverter& val)
 {
 	// non-instaciable class
 	(void)val;
-};
+}
 
 ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other)
 {
@@ -28,7 +28,7 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other)
 ScalarConverter::~ScalarConverter()
 {
 	// non-instaciable class
-};
+}
 
 
 
@@ -159,10 +159,12 @@ static void displayChar(int value)
 	std::cout << std::endl;
 }
 
+
 static void displayInt(int intValue)
 {
 	std::cout << "int: " << intValue << std::endl;
 }
+
 
 static void displayFloat(float floatValue)
 {
@@ -170,10 +172,34 @@ static void displayFloat(float floatValue)
 	std::cout << "float: " << floatValue  << "f" << std::endl;
 }
 
+
 static void displayDouble(double doubleValue)
 {
 	std::cout << std::fixed << std::setprecision(1);
 	std::cout << "double: " << doubleValue << std::endl;
+}
+
+
+static void displaySpecial(const std::string& str)
+{
+	std::cout << "char: impossible" << std::endl;
+	std::cout << "int: impossible" << std::endl;
+
+	if (str == "nan" || str == "nanf")
+	{
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+	}
+	else if (str == "inf" || str == "+inf" || str == "inff" || str == "+inff")
+	{
+		std::cout << "float: inff" << std::endl;
+		std::cout << "double: inf" << std::endl;
+	}
+	else if (str == "-inf" || str == "-inff")
+	{
+		std::cout << "float: -inff" << std::endl;
+		std::cout << "double: -inf" << std::endl;
+	}
 }
 
 
@@ -185,7 +211,7 @@ void ScalarConverter::convert(const std::string& str)
 	
 	if (isSpecial(str) == true)
 	{
-		std::cout << "special car. " << std::endl;
+		displaySpecial(str);
 		return;
 	}
 	

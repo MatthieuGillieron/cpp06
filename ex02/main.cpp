@@ -61,6 +61,41 @@ void identify(Base* p)
 
 void identify(Base& p)
 {
+	try
+	{
+		(void)dynamic_cast<A&>(p);
+		std::cout << "Ref A" << std::endl;
+		return;
+	}
+	
+	catch (std::exception& e)
+	{
+
+	}
+
+	try
+	{
+		(void)dynamic_cast<B&>(p);
+		std::cout << "Ref B" << std::endl;
+		return;
+	}
+
+	catch (std::exception& e)
+	{
+		
+	}
+
+	try
+	{
+		(void)dynamic_cast<C&>(p);
+		std::cout << "Ref C" << std::endl;
+		return;
+	}
+
+	catch (std::exception& e)
+	{
+		
+	}
 
 }
 
@@ -69,11 +104,18 @@ int main()
 	
 	srand(time(0));
 
+	std::cout << "\n=== POINTER ===" << std::endl;
+
 	Base* obj = generate();
 	Base* obj2 = generate();
 
 	identify(obj);
 	identify(obj2);
+
+	std::cout << "\n=== REF ===" << std::endl;
+
+	identify(*obj);
+	identify(*obj2);
 
 	delete obj;
 	delete obj2;

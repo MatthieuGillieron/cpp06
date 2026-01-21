@@ -70,7 +70,7 @@ void identify(Base& p)
 	
 	catch (std::exception& e)
 	{
-
+		//std::cout << "Not A: " << e.what() << std::endl;
 	}
 
 	try
@@ -82,7 +82,7 @@ void identify(Base& p)
 
 	catch (std::exception& e)
 	{
-		
+		//std::cout << "Not B: " << e.what() << std::endl;
 	}
 
 	try
@@ -94,7 +94,7 @@ void identify(Base& p)
 
 	catch (std::exception& e)
 	{
-		
+		//std::cout << "Not C: " << e.what() << std::endl;
 	}
 
 }
